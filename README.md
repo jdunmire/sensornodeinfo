@@ -14,6 +14,28 @@ archive:
     $ git archive --format=tar HEAD | (cd ../sensornodeinfo/ && tar xf -)
 
 
+Setup
+-----
+If these files are committed to the `gh-pages` branch of a git
+repository hosted on [GitHub](https://github.com), then
+[Jekyll](https://jekyllrb.com) will be run automatically and a
+functional web site will be available at
+http://<YourName>.github.io/<RepositoryName>/
+
+To view the web site locally you can install
+[Jekyll](https://jekllrb.com) locally.  On Ubuntu
+[Jekyll](https://jekyllrb.com/) and all required dependencies can be
+installed using a simple `apt-get`:
+
+    $ sudo apt-get install jekyll
+
+To view the web site, start the Jekyll web server:
+
+    $ jekyll --server
+
+And direct your browser to http://localhost:4000/
+
+
 License
 -------
   Copyright (C) 2015 Jerry Dunmire
