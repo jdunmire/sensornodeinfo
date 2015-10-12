@@ -1,11 +1,15 @@
 ### GENERAL SETTINGS ###
 
 # Site settings
-title: SOLID.
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+title: Sensor Nodes.
+description: "Information on the design and use of ESP-8266 sensor
+    nodes. ESP-8266 sensor nodes are IoT implemetation using MQTT over a
+    WiFi network. Hardware design, PCB layout, imbedded software on the
+    ESP-8266, MQTT based server software and website development are all
+    covered."
 analytics: #Google analytics code in the format XX-nnnnnnnn-n
 baseurl: "" #important: start with /
-url: "http://yourdomain.com"
+url: "http://sensornodes.rockingdlabs.com"
 
 # Build settings
 markdown: kramdown
@@ -24,83 +28,49 @@ colors:  #in hex code if not noted else
   
 ### CONTACT SETTINGS ###
 
-# Social networks usernames. Many more available: google-plus, flickr, linkedin, etc). Shown in footer.
-social:
-  - title: dribbble
-    url:
-  - title: facebook
-    url:
-  - title: twitter
-    url: 
-  - title: instagram
-    url: 
-  - title: tumblr
-    url: 
-    
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
   - lines: 
-    - Some Ave, 987,
-    - 23890, New York,
+    - 3720 Benton St.
+    - Santa Clara, CA 95051
     - United States.
-email: hello@solidtheme.com
-tel: +34 8493-4893
+#email: hello@solidtheme.com
+#tel: +34 8493-4893
 
 
 ### GENERAL DATA FOR VARIOUS LOCATIONS ###
     
 # Members information. Shown on About page.
+# TODO: create a contact project at github where people can contact me.
 members:
-  - name: Mark Webber
-    position: CEO
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  - name: Jerry Dunmire
+    position: Engineer/Maker
+    text: Engineer by training and vocation, Maker for life.
     img: team01.jpg
     social:
-      - title: envelope #use for email address
-        url: mailto:name@domain.com
-      - title: twitter
-        url: http://twitter.com/handle
-  - name: Paul Jameson
-    position: Lead Designer
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    img: team02.jpg
-    social:
-      - title: envelope #use for email address
-        url: mailto:name@domain.com
-      - title: twitter
-        url: http://twitter.com/handle
-  - name: Laura Sommers
-    position: Lead Developer
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    img: team03.jpg
-    social:
-      - title: envelope #use for email address
-        url: mailto:name@domain.com
-      - title: twitter
-        url: http://twitter.com/handle
-  - name: Martin Blunt
-    position: Marketing
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    img: team04.jpg
-    social:
-      - title: envelope #use for email address
-        url: mailto:name@domain.com
-      - title: twitter
-        url: http://twitter.com/handle
-    
+      - title: google-plus
+        url: https://plus.google.com/+JERRYDUNMIRE/posts
+      - title: github
+        url: https://github.com/jdunmire
+#      - title: envelope #use for email address
+#        url: mailto:name@domain.com
+
+# TODO: Change clients to 'nodes' and use each name for a different
+#       sensor node design.
 # Clients information. Shown on Home and About pages.
-clients:
-  - name: dribbble
-    img: client01.png
-  - name: Code is Poetry
-    img: client02.png
-  - name: Vimeo
-    img: client03.png
-  - name: VimeoPro
-    img: client04.png
+#clients:
+#  - name: dribbble
+#    img: client01.png
+#  - name: Code is Poetry
+#    img: client02.png
+#  - name: Vimeo
+#    img: client03.png
+#  - name: VimeoPro
+#    img: client04.png
     
-# Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
-about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+# Short text. Shown in footer on every page and also separately on Home
+# and Contact page.
+about: "Battery operated remote sensors for makers."
 
 # Testimonial content. Shown on Home and About page. 
 testimonial:
