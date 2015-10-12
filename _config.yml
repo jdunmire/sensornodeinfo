@@ -3,8 +3,8 @@
 # Site settings
 title: Sensor Nodes.
 description: "Information on the design and use of ESP-8266 sensor
-    nodes. ESP-8266 sensor nodes are IoT implemetation using MQTT over a
-    WiFi network. Hardware design, PCB layout, imbedded software on the
+    nodes. ESP-8266 sensor nodes are an IoT implementation using MQTT over a
+    WiFi network. Hardware design, PCB layout, embedded software on the
     ESP-8266, MQTT based server software and website development are all
     covered."
 analytics: #Google analytics code in the format XX-nnnnnnnn-n
@@ -28,7 +28,8 @@ colors:  #in hex code if not noted else
   
 ### CONTACT SETTINGS ###
 
-# Postal address (add as many lines as necessary). Shown in footer and on Contact page.
+# Postal address (add as many lines as necessary). Shown in footer and
+# on Contact page.
 address:
   - lines: 
     - 3720 Benton St.
