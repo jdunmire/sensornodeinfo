@@ -8,7 +8,7 @@ description: "Information on the design and use of ESP-8266 sensor
     ESP-8266, MQTT based server software and website development are all
     covered."
 analytics: #Google analytics code in the format XX-nnnnnnnn-n
-baseurl: "" #important: start with /
+baseurl: "/sensornodeinfo" #important: start with /
 url: "http://sensornodes.rockingdlabs.com"
 
 # Build settings
