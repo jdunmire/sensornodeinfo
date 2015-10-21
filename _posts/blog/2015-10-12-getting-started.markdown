@@ -5,7 +5,7 @@ date: 2015-10-21 19:29
 author: Jerry
 categories:
 - blog
-- project
+- Background
 img: tarmy.jpg
 thumb: tarmy.jpg
 ---
