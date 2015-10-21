@@ -5646,6 +5646,7 @@ button.close {
 }
 .pull-left {
   float: left !important;
+  margin-right: 10px;
 }
 .hide {
   display: none !important;
