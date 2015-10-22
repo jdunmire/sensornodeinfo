@@ -1,7 +1,7 @@
 ### GENERAL SETTINGS ###
 
 # Site settings
-title: Sensor Nodes.
+title: Sensor Nodes
 description: "Information on the design and use of ESP-8266 sensor
     nodes. ESP-8266 sensor nodes are an IoT implementation using MQTT over a
     WiFi network. Hardware design, PCB layout, embedded software on the
@@ -46,7 +46,7 @@ address:
 members:
   - name: Jerry Dunmire
     position: Engineer/Maker
-    text: Engineer by training and vocation, Maker for life.
+    text: Engineer by training and vocation,<br>Maker for life.
     img: team01.jpg
     social:
       - title: google-plus
