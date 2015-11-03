@@ -57,25 +57,25 @@
 		});
 		
 		function getColumnNumber() { 
-			var winWidth = $(window).width(), 
+			var winWidth = $("#projComponents").width(), 
 			columnNumber = 1;
 		
-			if (winWidth > 1200) {
+			if (winWidth > 840) {
+				columnNumber = 6;
+			} else if (winWidth > 696) {
 				columnNumber = 5;
-			} else if (winWidth > 950) {
+			} else if (winWidth > 538) {
 				columnNumber = 4;
-			} else if (winWidth > 600) {
-				columnNumber = 3;
 			} else if (winWidth > 400) {
-				columnNumber = 2;
+				columnNumber = 3;
 			} else if (winWidth > 250) {
-				columnNumber = 1;
+				columnNumber = 2;
 			}
 				return columnNumber;
 			}       
 			
 			function setColumns() {
-				var winWidth = $(window).width(), 
+                                var winWidth = $("#projComponents").width(), 
 				columnNumber = getColumnNumber(), 
 				itemWidth = Math.floor(winWidth / columnNumber);
 				

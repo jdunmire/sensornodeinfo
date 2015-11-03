@@ -4,7 +4,7 @@ title: Home
 permalink: /
 ---
 
-<div id="service">
+<div id="service" class="hidden">
     <div class="container">
         <div class="row centered">
             <div class="col-md-4">
@@ -29,31 +29,25 @@ permalink: /
     </div><! --/container -->
 </div><! --/service -->
 
-{% include portfolio.html title="LATEST WORKS" limit=10 %}
-
-<div class="container mtb">
+<div class="container">
     <div class="row">
-        <div class="col-lg-4 col-lg-offset-1">
-            <h4>More About Our Agency.</h4>
-            <p>{{ site.about }}</p>
-            <p><br/><a href="{{ "/about/" | prepend: site.baseurl }}" class="btn btn-theme">More Info</a></p>
-        </div>
-
-        <div class="col-lg-3">
-            <h4>Frequently Asked</h4>
+        <div class="col-lg-9" id="projComponents">
+            <h4>Project Components</h4>
             <div class="hline"></div>
-            {% for post in site.categories['question'] %} 
-                <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
-            {% endfor %}
+            {% include portfolio.html limit=4 %}
         </div>
-
         <div class="col-lg-3">
             <h4>Latest Posts</h4>
             <div class="hline"></div>
-            {% for post in site.categories['blog'] limit:5 %} 
-                <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}.</a></p>
+        <ul class="popular-posts">
+            {% for post in site.categories['blog'] limit:4 %} 
+                <li>
+                    <a href="{{ post.url  | prepend: site.baseurl }}"><img src="{{ "/assets/img/blog/thumbs/" | prepend: site.baseurl }}{{ post.thumb }}" alt="Popular Post"></a>
+                    <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
+                <em>Posted on {{ post.date | date_to_string }}</em>
+            </li>
             {% endfor %} 
+        </ul>
         </div>
-
     </div><! --/row -->
-</div><! --/container -->
+</div> <! -- /container -->
