@@ -3,6 +3,7 @@ layout: post
 title: "Getting Started"
 date: 2015-10-21 19:29
 author: Jerry
+permalink: /blog/2015/10/21/getting-started
 categories:
 - blog
 - Background
@@ -10,6 +11,7 @@ img: tarmy.jpg
 thumb: tarmy.jpg
 imgcredit: "CC BY-SA 3.0 Tor Svensson"
 imgcrediturl: "https://commons.wikimedia.org/wiki/File:Terrakottaarm%C3%A9n.jpg"
+commentIssueId: 2
 ---
 Well, not really. I've been working on a sensor node design most of
 2015 and it is based on a long term desire to have small, low cost,

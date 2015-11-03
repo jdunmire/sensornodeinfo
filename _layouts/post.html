@@ -20,20 +20,68 @@ layout: default
             </div>
             <a href="{{ page.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ page.title }}</h3></a>
             <p><csmall>{{ page.date | date: "%b %-d, %Y" }}. | By: {{ page.author }}</csmall></p>
-              
+
             {{ content }}
 
             <div class="spacing"></div>
+            {% if page.commentIssueId %}
+            <div id="comments">
+                <h3>Comments</h3>
+                <div class="hline"></div>
+                <div id="header">
+                    Want to leave a comment? Visit
+                    <a
+                     href="https://github.com/jdunmire/sensornodeinfo/issues/{{ page.commentIssueId }}"
+                     class="btn btn-theme" role="button">GitHub</a>
+                    </p>.
+                </div>
+            </div>
+            <div class="spacing"></div>
+            {% endif %}
             <!-- <h6>SHARE:</h6>
-            <p class="share">
+                <p class="share">
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-tumblr"></i></a>
                 <a href="#"><i class="fa fa-google-plus"></i></a>		 		
-            </p> -->
+                </p> -->
         </div><! --/col-lg-8 -->
-        
+
         {% include sidebar.html %}
 
     </div><! --/row -->
 </div><! --/container -->
+
+{% if page.commentIssueId %}
+<script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+function loadComments(data) {
+    for (var i=0; i<data.length; i++) {
+        var cuser = data[i].user.login;
+        var cuserlink = "https://www.github.com/" + data[i].user.login;
+        var clink =
+            "https://github.com/jdunmire/sensornodeinfo/issues/{{ page.commentIssueId }}#issuecomment-" + data[i].url.substring(data[i].url.lastIndexOf("/")+1);
+        cbody = data[i].body_html;
+        cavatarlink = data[i].user.avatar_url;
+        //cdate = Date.parse(data[i].created_at).toString("yyyy-MM-dd HH:mm:ss");
+        dateval = new Date(Date.parse(data[i].created_at));
+        cdate = '' + dateval.getFullYear() + '/' + (dateval.getMonth() + 1) + '/'
+            + dateval.getDay();
+
+        $("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' + "</div><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a><a class='commentdate' href=\"" + clink + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+    }
+}
+$.ajax("https://api.github.com/repos/jdunmire/sensornodeinfo/issues/{{ page.commentIssueId }}/comments",
+        {
+            headers: {
+                Accept: "application/vnd.github.full+json"},
+                success: function(msg){
+                    loadComments(msg);
+                }
+        }
+      );
+</script>
+{% endif %}
