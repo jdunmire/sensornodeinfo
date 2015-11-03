@@ -28,6 +28,13 @@ colors:  #in hex code if not noted else
   
 ### CONTACT SETTINGS ###
 
+# Social networks
+social:
+  - title: google-plus
+    url: https://plus.google.com/+JERRYDUNMIRE/posts
+  - title: github
+    url: https://github.com/jdunmire
+
 # Postal address (add as many lines as necessary). Shown in footer and
 # on Contact page.
 address:

@@ -2,14 +2,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-2 hidden-md hidden-sm hidden-xs">
+                <a href="{{ "/about/" | prepend: site.baseurl }}">
                 <img
                  class="img-responsive center-block"
                  src="{{ "/assets/img/RockingDLabs.svg" | prepend: site.baseurl }}"
                 </img>
+                </a>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-5">
                 <h4><br></h4>
-                <div class="hline-w"></div>
                 <a href="http://creativecommons.org/licenses/by-sa/4.0/">
                         <img
                        class="img-responsive center-block"
@@ -18,7 +19,16 @@
                     </a>
                 <p>Except where otherwise noted, content on this site is
                 licensed under a <b>Creative Commons
-                    Attribution-ShareAlike 4.0 International license<b>.
+                    Attribution-ShareAlike 4.0 International license</b>.
+            </div>
+            <div class="col-lg-2">
+                <h4>Social Links</h4>
+                <div class="hline-w"></div>
+                <p>
+                    {% for network in site.social %}
+                         <a href="{{ network.url }}" class="btn-social btn-outline"><i class="fa fa-{{ network.title }}"></i></a>
+                    {% endfor %}
+                </p>
             </div>
             <div class="col-lg-3">
                 <h4>Address</h4>
