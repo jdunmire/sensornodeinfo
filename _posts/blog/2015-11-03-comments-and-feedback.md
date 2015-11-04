@@ -8,10 +8,8 @@ categories:
 - blog
 - Background
 - GitHub
-img: tarmy.jpg
-thumb: tarmy.jpg
-imgcredit: "CC BY-SA 3.0 Tor Svensson"
-imgcrediturl: "https://commons.wikimedia.org/wiki/File:Terrakottaarm%C3%A9n.jpg"
+img: houseAndNodes.png
+thumb: houseAndNodes.png
 ---
 In the footsteps of [Eric Jones][erjjones.github.io] and
 [Ivan Zuzak][ivanzuzak], I am using
