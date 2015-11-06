@@ -251,8 +251,8 @@ a:focus {
 
 /* Portfolio Wrap */
 #portfoliowrap {
-	padding-top: 10px;
-	margin-bottom: 10px;
+	padding-top: 60px;
+	margin-bottom: 60px;
 	display: block;
 	text-align: center
 }
@@ -277,14 +277,14 @@ a:focus {
 {
 	color:#fff;
 	margin:0;
-	padding:40px 5px 0;
+	padding:15px 5px 0;
 	font-size:16px;
 	text-transform:uppercase;
 }
 .tpl6 .dmbutton
 {
 	display:inline-block;
-	margin:30px 5px 20px 5px;
+	margin:5px 5px 5px 5px;
 	font-size:13px;
 }
 

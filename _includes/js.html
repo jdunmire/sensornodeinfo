@@ -57,27 +57,28 @@
 		});
 		
 		function getColumnNumber() { 
-			var winWidth = $("#projComponents").width(), 
-			columnNumber = 1;
+			var divWidth = $("#projComponents").width(), 
+			columnNumber = 1,
+                        imgWidMin=160;
 		
-			if (winWidth > 840) {
+			if (divWidth > (6 * imgWidMin)) {
 				columnNumber = 6;
-			} else if (winWidth > 696) {
+			} else if (divWidth > (5 * imgWidMin)) {
 				columnNumber = 5;
-			} else if (winWidth > 538) {
+			} else if (divWidth > (4 * imgWidMin)) {
 				columnNumber = 4;
-			} else if (winWidth > 400) {
+			} else if (divWidth > (3 * imgWidMin)) {
 				columnNumber = 3;
-			} else if (winWidth > 250) {
+			} else if (divWidth > (2 * imgWidMin)) {
 				columnNumber = 2;
 			}
 				return columnNumber;
 			}       
 			
 			function setColumns() {
-                                var winWidth = $("#projComponents").width(), 
+                                var divWidth = $("#projComponents").width(), 
 				columnNumber = getColumnNumber(), 
-				itemWidth = Math.floor(winWidth / columnNumber);
+				itemWidth = Math.floor(divWidth / columnNumber);
 				
 				$container.find('.portfolio-item').each(function() { 
 					$(this).css( { 
