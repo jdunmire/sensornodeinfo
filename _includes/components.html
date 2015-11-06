@@ -1,0 +1,21 @@
+<div id="componentswrap">
+    <div class="components-centered">
+        {% if include.title %}<h3>{{ include.title }}</h3>{% endif %}
+        <div class="recentitems components">
+            {% for component in site.categories['component'] limit:include.limit %}
+                <div class="components-item graphic-design">
+                    <div class="he-wrap tpl6">
+                    <img src="{{ "/assets/img/components/" | prepend: site.baseurl }}{{ component.img }}" alt="">
+                    <a href="{{ component.url | prepend: site.baseurl }}">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">{{ component.title }}</h3>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->		
+                    </a>
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+            {% endfor %}
+        </div><!-- component -->
+    </div><!-- components container -->
+</div><!--/Componentswrap -->

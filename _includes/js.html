@@ -19,21 +19,21 @@
 </script>
 {% endif %}
 <script>
-// Portfolio
+// Components
 (function($) {
 	"use strict";
-	var $container = $('.portfolio'),
-		$items = $container.find('.portfolio-item'),
-		portfolioLayout = 'fitRows';
+	var $container = $('.components'),
+		$items = $container.find('.components-item'),
+		componentsLayout = 'fitRows';
 		
-		if( $container.hasClass('portfolio-centered') ) {
-			portfolioLayout = 'masonry';
+		if( $container.hasClass('components-centered') ) {
+			componentsLayout = 'masonry';
 		}
 				
 		$container.isotope({
 			filter: '*',
 			animationEngine: 'best-available',
-			layoutMode: portfolioLayout,
+			layoutMode: componentsLayout,
 			animationOptions: {
 			duration: 750,
 			easing: 'linear',
@@ -48,10 +48,10 @@
 			}, 1000);   
 		}
 				
-		$('nav.portfolio-filter ul a').on('click', function() {
+		$('nav.components-filter ul a').on('click', function() {
 				var selector = $(this).attr('data-filter');
 				$container.isotope({ filter: selector }, refreshWaypoints());
-				$('nav.portfolio-filter ul a').removeClass('active');
+				$('nav.components-filter ul a').removeClass('active');
 				$(this).addClass('active');
 				return false;
 		});
@@ -80,24 +80,24 @@
 				columnNumber = getColumnNumber(), 
 				itemWidth = Math.floor(divWidth / columnNumber);
 				
-				$container.find('.portfolio-item').each(function() { 
+				$container.find('.components-item').each(function() { 
 					$(this).css( { 
 					width : itemWidth + 'px' 
 				});
 			});
 		}
 		
-		function setPortfolio() { 
+		function setComponents() { 
 			setColumns();
 			$container.isotope('reLayout');
 		}
 			
 		$container.imagesLoaded(function () { 
-			setPortfolio();
+			setComponents();
 		});
 		
 		$(window).on('resize', function () { 
-		setPortfolio();          
+		setComponents();          
 	});
 })(jQuery);
 </script>
