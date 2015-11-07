@@ -15,12 +15,16 @@
         <div class="carousel-inner">
             {% for img in page.carousel.first %}
                 <div class="item active">
+                    <a data-rel="prettyPhoto" href="{{ "/assets/img/components/carousel/" | prepend: site.baseurl }}{{ img }}">
                     <img src="{{ "/assets/img/components/carousel/" | prepend: site.baseurl }}{{ img }}" alt="">
+                    </a>
                 </div>
             {% endfor %}
             {% for img in page.carousel offset:1 %}
                 <div class="item">
+                    <a data-rel="prettyPhoto" href="{{ "/assets/img/components/carousel/" | prepend: site.baseurl }}{{ img }}">
                     <img src="{{ "/assets/img/components/carousel/" | prepend: site.baseurl }}{{ img }}" alt="">
+                    </a>
                 </div>
             {% endfor %}
         </div>
