@@ -7,24 +7,31 @@ layout: default
 <div class="container mt">
     <div class="row">
 
+<div class="col-md-6 col-md-offset-1">
         {% include carousel.html %}
+</div>
+        <div class="col-md-4">
+            <div class="spacing"></div>
+            <h4>Summary</h4>
+            <div class="hline"></div>
+            <p>{{ page.summary }}</p>
+            <p><b>Started:</b> {{ page.started | date: "%b %-d, %Y" }}</p>
+            <p><b>Updated:</b> {{ page.date | date: "%b %-d, %Y" }}</p>
+            <p><b>Categories:</b>
+    {% for category in page.categories %}{% unless category == "blog" or category == "component" or category == "components" or category == "question" %}
+            <a class="btn btn-theme" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category }}" role="button">{{ category }}</a>	         
+        {% endunless %}{% endfor %}
+    </p>
+            {% if page.repository %}
+            <p><a href="{{ page.repository }}">Files</a></p>
+            {% endif %}
+        </div>
 
-        <div class="col-lg-5 col-lg-offset-1">
+        <div class="col-md-8 col-md-offset-2">
             <div class="spacing"></div>
 
             {{ content }}
 
-        </div>
-        <div class="col-lg-4 col-lg-offset-1">
-            <div class="spacing"></div>
-            <h4>Project Details</h4>
-            <div class="hline"></div>
-            <p><b>Date:</b> {{ page.date | date: "%b %-d, %Y" }}</p>
-            <p><b>Author:</b> {{ page.author }}</p>
-            <p><b>Categories:</b> {{ page.categories }}</p>
-            <p><b>Tagged:</b> Flat, UI, Development</p>
-            <p><b>Client:</b> {{ page.client }}</p>
-            <p><b>Website:</b> <a href="{{ page.website }}">{{ page.website }}</a></p>
         </div>
     </div><! --/row -->
 </div><! --/container -->
