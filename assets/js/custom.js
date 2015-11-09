@@ -1,12 +1,52 @@
-(function($) {
+(function ($) {
+    // delegate calls to data-toggle="lightbox"
+    $(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
+        event.preventDefault();
+        return $(this).ekkoLightbox({
+            onShown: function() {
+                if (window.console) {
+                    return console.log('Checking our the events huh?');
+                }
+            },
+            onNavigate: function(direction, itemIndex) {
+                if (window.console) {
+                    return console.log('Navigating '+direction+'. Current item: '+itemIndex);
+                }
+            }
+        });
+    });
 
-// prettyPhoto
-	jQuery(document).ready(function(){
-		jQuery('a[data-gal]').each(function() {
-			jQuery(this).attr('rel', jQuery(this).data('gal'));
-		});  	
-		jQuery("a[data-rel^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',theme:'light_square',slideshow:false,overlay_gallery: false,social_tools:false,deeplinking:false});
-	}); 
+    //Programatically call
+    $('#open-image').click(function (e) {
+        e.preventDefault();
+        $(this).ekkoLightbox();
+    });
+    $('#open-youtube').click(function (e) {
+        e.preventDefault();
+        $(this).ekkoLightbox();
+    });
 
-		
+    // navigateTo
+    $(document).delegate('*[data-gallery="navigateTo"]', 'click', function(event) {
+        event.preventDefault();
+
+        var lb;
+        return $(this).ekkoLightbox({
+            onShown: function() {
+
+                lb = this;
+
+                $(lb.modal_content).on('click', '.modal-footer a', function(e) {
+
+                    e.preventDefault();
+                    lb.navigateTo(2);
+
+                });
+
+            }
+        });
+    });
+
+
 })(jQuery);
+

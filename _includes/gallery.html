@@ -1,0 +1,28 @@
+<! --
+    Use link to wrap first img
+    Use div with data-remote attribute for hidden images.
+    data-galley is the same for all images 
+    data-title is an option
+    data-footer is another option
+-->
+
+<div id="component-gallery" class="gallery">
+    <!-- Cover image -->
+    {% for img in page.carousel.first %}
+    <a data-toggle="lightbox" data-gallery="componentImages"
+        data-title="{{ img | split:"," | last }}"
+        href="{{ "/assets/img/components/carousel/" | prepend:
+        site.baseurl }}{{ img | split:"," | first }}">
+        <img src="{{ "/assets/img/components/carousel/" | prepend:
+        site.baseurl }}{{ img | split:"," | first }}" alt="">
+        Gallery
+    </a>
+    {% endfor %}
+    {% for img in page.carousel offset:1 %}
+    <div data-toggle="lightbox" data-gallery="componentImages"
+        data-title="{{ img | split:"," | last }}"
+        data-remote="{{ "/assets/img/components/carousel/" | prepend:
+        site.baseurl }}{{ img | split:"," | first }}" >
+    </div>
+    {% endfor %}
+</div> <!--/gallery -->
