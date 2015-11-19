@@ -9,20 +9,16 @@
 <div id="component-gallery" class="gallery">
     <!-- Cover image -->
     {% for img in page.carousel.first %}
-    <a data-toggle="lightbox" data-gallery="componentImages"
-        data-title="{{ img | split:"," | last }}"
-        href="{{ "/assets/img/components/carousel/" | prepend:
-        site.baseurl }}{{ img | split:"," | first }}">
-        <img src="{{ "/assets/img/components/carousel/" | prepend:
-        site.baseurl }}{{ img | split:"," | first }}" alt="">
+    <a data-toggle="lightbox" data-gallery="componentImages" data-title="{{ img | split:"," | last }}"
+        href="{{ "/assets/img/components/carousel/" | prepend: site.baseurl }} {{ img | split:"," | first }}">
+        <img src="{{ "/assets/img/components/carousel/" | prepend: site.baseurl }}{{ img | split:"," | first }}" alt="">
         Gallery
     </a>
     {% endfor %}
     {% for img in page.carousel offset:1 %}
     <div data-toggle="lightbox" data-gallery="componentImages"
         data-title="{{ img | split:"," | last }}"
-        data-remote="{{ "/assets/img/components/carousel/" | prepend:
-        site.baseurl }}{{ img | split:"," | first }}" >
+        data-remote="{{ "/assets/img/components/carousel/" | prepend: site.baseurl }}{{ img | split:"," | first }}" >
     </div>
     {% endfor %}
 </div> <!--/gallery -->
