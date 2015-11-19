@@ -7,12 +7,16 @@ layout: default
 <div class="container mt">
     <div class="row">
 
-<div class="col-md-6 col-md-offset-1">
-    <div class="row">
-        {% include gallery.html %}
-    </div>
-</div>
+    {% if page.carousel.first %}
+        <div class="col-md-6 col-md-offset-1">
+            <div class="row">
+                {% include gallery.html %}
+            </div>
+        </div>
         <div class="col-md-4">
+    {% else %}
+        <div class="col-md-4 col-md-offset-2">
+    {% endif %}
             <div class="spacing"></div>
             <h4>Summary</h4>
             <div class="hline"></div>
@@ -20,15 +24,16 @@ layout: default
             <p><b>Started:</b> {{ page.started | date: "%b %-d, %Y" }}</p>
             <p><b>Updated:</b> {{ page.date | date: "%b %-d, %Y" }}</p>
             <p><b>Categories:</b>
-    {% for category in page.categories %}{% unless category == "blog" or category == "component" or category == "components" or category == "question" %}
+            {% for category in page.categories %}{% unless category == "blog" or category == "component" or category == "components" or category == "question" %}
             <a class="btn btn-theme" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category }}" role="button">{{ category }}</a>	         
-        {% endunless %}{% endfor %}
-    </p>
+            {% endunless %}{% endfor %}
+            </p>
             {% if page.repository %}
             <p><a href="{{ page.repository }}">Files</a></p>
             {% endif %}
         </div>
-
+    </div><! --/row -->
+    <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="spacing"></div>
 
