@@ -10,6 +10,7 @@ categories:
 img: houseAndNodes.png
 thumb: houseAndNodes.png
 commentIssueId: 2
+
 ---
 Well, not really. I've been working on a sensor node design most of
 2015 and it is based on a long term desire to have small, low cost,
