@@ -18,7 +18,7 @@ In the footsteps of [Eric Jones][erjjones.github.io] and
 Associated comments entered at [GitHub][github] will be shown on each
 post. Feedback entered through the
 [contact][contact] page will not be
-show on this site.
+shown on this site.
 
 [erjjones.github.io]: http://erjjones.github.io/blog/How-I-built-my-blog-in-one-day/
 [ivanzuzak]: http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html
