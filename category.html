@@ -6,7 +6,7 @@ permalink: /category/
 
 <div class="container mtb">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-md-8">
 
         <! -- BLOG POSTS LIST -->
         {% for category in site.categories %}{% unless category.first == "blog" or category.first == "component" %}
@@ -27,7 +27,7 @@ permalink: /category/
 
 
         {% endunless %}{% endfor %}
-        </div><! --/col-lg-8 -->
+        </div><! --/col-md-8 -->
 
         {% include sidebar.html %}
 
