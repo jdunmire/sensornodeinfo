@@ -1,21 +1,81 @@
-<div id="componentswrap">
-    <div class="components-centered">
-        {% if include.title %}<h3>{{ include.title }}</h3>{% endif %}
-        <div class="recentitems components">
-            {% for component in site.categories['component'] limit:include.limit %}
-                <div class="components-item graphic-design">
-                    <div class="he-wrap tpl6">
-                    <img src="{{ "/assets/img/components/" | prepend: site.baseurl }}{{ component.img }}" alt="">
-                    <a href="{{ component.url | prepend: site.baseurl }}">
-                        <div class="he-view">
-                            <div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">{{ component.title }}</h3>
-                            </div><!-- he bg -->
-                        </div><!-- he view -->		
+<! -- COMPONENT POSTS LIST -->
+{% for component in site.categories['component'] %}
+{% if component.status == page.components-status or page.components-status == "all" %}
+<div class="row">
+    <div class="col-xs-12">
+        <a href="{{ component.url | prepend: site.baseurl }}"><h4 class="ctitle">{{ component.title }}</h4></a>
+    </div>
+    <div class="col-xs-8 col-sm-3">
+        <! -- Component Post -->
+        <a href="{{ component.url | prepend: site.baseurl }}">
+            <div class="img-responsive pull-left gap-right">
+                <img src="{{ "/assets/img/components/" | prepend: site.baseurl }}{{ component.img }}">
+                <div class="img-credits">
+                    <a href="{{ component.imgcrediturl }}">
+                        {{ component.imgcredit }}
                     </a>
-                    </div><!-- he wrap -->
-                </div><!-- end col-12 -->
-            {% endfor %}
-        </div><!-- component -->
-    </div><!-- components container -->
-</div><!--/Componentswrap -->
+                </div>
+            </div>
+        </a>    
+    </div>
+    <div class="col-xs-12 col-sm-8">
+        {{ component.summary }}<br>
+        <table>
+            <tbody class="definition">
+            <tr>
+                <td class="text-left">
+                    <b>Status:</b> <span class="def-padding">
+                    </td>
+                    <td class="text-left">
+                        {{ component.status |  capitalize }}</span> <br>
+                </td>
+            </tr><tr>
+                <td class="text-left">
+                    <b>Started:</b>
+                    <span class="def-padding">
+                    </td>
+                    <td class="text-left">
+                        {{ component.started | date: "%b %-d, %Y" }}</span><br>
+                </td>
+            </tr><tr>
+                <td class="text-left">
+                    <b>Updated:</b><span class="def-padding">
+                    </td>
+                    <td class="text-left">
+                        {{ component.date | date: "%b %-d, %Y" }}</span><br>
+                </td>
+            </tr><tr>
+                <td class="text-left">
+                    {% if component.repository %}
+                    <b>Repository:</b><span class="def-padding">
+                    </td>
+                    <td class="text-left">
+                        <a href="{{ component.repository }}"
+                            class="btn-social btn-outline">
+                            GitHub <i class="fa fa-github"></i></a>
+                    </span><br>
+                    {% endif %}
+                    </p>
+                </td>
+            </tr><tr>
+                <td class="text-left">
+                    <p><b>Categories:</b><span class="def-padding"></span>
+                </td>
+                <td class="text-left">
+                    {% for category in component.categories %}{% unless category == "blog" or category == "component" or category == "components" or category == "question" %}
+                    <a class="btn btn-theme" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category }}" role="button">{{ category }}</a>	         
+                    {% endunless %}{% endfor %}
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <p><a href="{{ component.url | prepend: site.baseurl }}">[Read More]</a></p>
+    </div>
+</div>
+<div class="hline"></div>
+
+<div class="spacing"></div>
+{% endif %}
+{% endfor %}
+
