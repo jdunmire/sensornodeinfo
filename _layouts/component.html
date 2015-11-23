@@ -6,43 +6,65 @@ layout: default
 
 <div class="container mt">
     <div class="row">
-
-    {% if page.carousel.first %}
-        <div class="col-md-6 col-md-offset-1">
+        <div class="col-md-9">
             <div class="row">
-                {% include gallery.html %}
-            </div>
-        </div>
-        <div class="col-md-4">
-    {% else %}
-        <div class="col-md-10 col-md-offset-1">
-    {% endif %}
-            <div class="spacing"></div>
-            <h4>Summary</h4>
-            <div class="hline"></div>
-            <p>{{ page.summary }}<br>
-            <b>Started:</b> {{ page.started | date: "%b %-d, %Y" }}<br>
-            <b>Updated:</b> {{ page.date | date: "%b %-d, %Y" }}<br>
-            {% if page.repository %}
-            <b>Repository:</b> <a href="{{ page.repository }}"
-            class="btn-social btn-outline">
-             GitHub <i class="fa fa-github"></i></a>
-             <br>
-            {% endif %}
-            </p>
-            <p><b>Categories:</b>
-            {% for category in page.categories %}{% unless category == "blog" or category == "component" or category == "components" or category == "question" %}
-            <a class="btn btn-theme" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category }}" role="button">{{ category }}</a>	         
-            {% endunless %}{% endfor %}
-            </p>
-        </div>
-    </div><! --/row -->
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="spacing"></div>
+                {% if page.carousel.first %}
+                <div class="col-md-5 col-md-offset-1 col-md-push-6">
+                    {% else %}
+                    <div class="col-md-11 col-md-offset-1">
+                        {% endif %}
+                        <h4>Summary</h4>
+                        <div class="hline"></div>
+                        <p>{{ page.summary }}<br>
+                        <div class="spacing"></div>
+                        <b>Started:</b> {{ page.started | date: "%b %-d, %Y" }}<br>
+                        <b>Updated:</b> {{ page.date | date: "%b %-d, %Y" }}<br>
+                        {% if page.repository %}
+                        <b>Repository:</b> <a href="{{ page.repository }}"
+                            class="btn-social btn-outline">
+                            GitHub <i class="fa fa-github"></i></a>
+                        <br>
+                        {% endif %}
+                        </p>
+                        <p><b>Categories:</b>
+                        {% for category in page.categories %}{% unless category == "blog" or category == "component" or category == "components" or category == "question" %}
+                        <a class="btn btn-theme"
+                            href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category }}" role="button">{{ category }}
+                        </a>
+                        {% endunless %}{% endfor %}
+                        </p>
+                    </div> <!-- /col-md-5 -->
+                    {% if page.carousel.first %}
+                    <div class="col-md-6 col-md-pull-5">
+                        {% include gallery.html %}
+                    </div>
+                    {% endif %}
+                </div><!--/row -->
+                <div class="row">
+                    <div class="col-md-11 col-md-offset-1">
+                        <h4>Details</h4>
+                        <div class="hline"></div>
+                        <div class="spacing"></div>
 
-            {{ content }}
+                        {{ content }}
 
-        </div>
-    </div><! --/row -->
-</div><! --/container -->
+                    </div>
+                </div><!--/row -->
+            </div><!--/col-md-9 -->
+
+            <div class="col-md-3">
+                <h4>Related Posts</h4>
+                <div class="hline"></div>
+                <ul class="popular-posts">
+                    {% for post in site.categories[page.title] %}
+                    <li>
+                    <p><a href="{{ post.url | prepend: site.baseurl }}">
+                        {{ post.title }}
+                    </a></p>
+                    <em>Posted on {{ post.date | date_to_string }}</em>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div> <!-- /col-md-3 -->
+        </div><!--/row -->
+    </div><!--/container -->
