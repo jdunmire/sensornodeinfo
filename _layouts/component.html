@@ -48,6 +48,20 @@ layout: default
 
                         {{ content }}
 
+                    {% if page.commentIssueId %}
+                    <div id="comments">
+                        <h4>Comments</h4>
+                        <div class="hline"></div>
+                        <div id="header">
+                            Want to leave a comment? Visit
+                            <a
+                             href="https://github.com/jdunmire/sensornodeinfo/issues/{{ page.commentIssueId }}"
+                             class="btn btn-theme" role="button">GitHub</a>
+                            </p>.
+                        </div>
+                    </div>
+                    <div class="spacing"></div>
+                    {% endif %}
                     </div>
                 </div><!--/row -->
             </div><!--/col-md-9 -->
