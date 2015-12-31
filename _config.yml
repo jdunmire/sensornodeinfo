@@ -7,7 +7,7 @@ description: "Information on the design and use of ESP-8266 sensor
     WiFi network. Hardware design, PCB layout, embedded software on the
     ESP-8266, MQTT based server software and website development are all
     covered."
-analytics: #Google analytics code in the format XX-nnnnnnnn-n
+analytics: UA-58136696-1
 #baseurl: "/./" #important: start with /
 #url: "http://sensornodeinfo.rockingdlabs.com"
 
