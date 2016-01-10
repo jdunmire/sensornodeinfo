@@ -12,10 +12,11 @@ title:  "title of the post"
 permalink: /blog/YYYY/MM/DD/unique-name
 #commentIssueId: <issue number>  # optional, no comments if not defined
 categories:
-- component
+- blog
 - <one or more categories, one per line>
 img: 640x480_image.jpg|png
 thumb: 70x53_image.jpg|png or 70x70_image.jpg|png
+
 ---
 
 When the draft is complete, move it from this directory to the
