@@ -8,6 +8,7 @@ Posts should begin with a header like this:
 ---
 layout: post
 title:  "title of the post"
+author: Jerry
 #date: YYYY-MM-DD  # last modified if different than the filename/modification time
 permalink: /blog/YYYY/MM/DD/unique-name
 #commentIssueId: <issue number>  # optional, no comments if not defined
