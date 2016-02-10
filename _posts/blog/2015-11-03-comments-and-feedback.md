@@ -3,7 +3,7 @@ layout: post
 title: "Comments and Feedback"
 date: 2015-11-03
 author: Jerry
-permalink: /blog/2015/11/03/comments-and-feedback
+permalink: /blog/2015/11/03/comments-and-feedback/
 categories:
 - blog
 - Background

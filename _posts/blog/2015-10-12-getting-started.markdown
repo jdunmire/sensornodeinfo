@@ -3,7 +3,7 @@ layout: post
 title: "Getting Started"
 date: 2015-10-21 19:29
 author: Jerry
-permalink: /blog/2015/10/21/getting-started
+permalink: /blog/2015/10/21/getting-started/
 categories:
 - blog
 - Background
