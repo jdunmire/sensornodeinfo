@@ -9,7 +9,8 @@ description: "Information on the design and use of ESP-8266 sensor
     covered."
 analytics: UA-58136696-2
 #baseurl: "/./" #important: start with /
-#url: "http://sensornodeinfo.rockingdlabs.com"
+baseurl: "" #important: start with /
+url: "http://sensornodeinfo.rockingdlabs.com"
 
 # Build settings
 markdown: kramdown
