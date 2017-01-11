@@ -1,0 +1,60 @@
+t-back.jpg: 1000x750   - B/W of Manhattan
+t-back1.jpg: 1280x850  - Blue wash of Manhattan
+'about': 800x600       - Desk,Monitor,Windo 
+browser.png: 848x600   - Main picture on front page
+contact:jpg 1200x784   - B/W ariel photo
+
+
+Blog
+------
+Thumbnails are square: 70x70
+Blog images are 850x400
+
+Projects
+---------
+component/portfolio pics are: 600x450
+carousel pics are 1280x600
+
+Clients
+--------
+logos are 524x118 on white background
+
+Member photos
+-------------
+600x600
+
+
+Images are scaled so that the width matches the available space and then
+the height follows. Image appear to be centered vertically.
+
+So for other sizes, make the width match other images of that type and
+make the height less than or equal to the other types.
+
+
+Limit blog thumbnail widths to 70px
+Limit blog 'full-size' to 140
+
+Project:
+--------
+Images need to be the same aspect ratio so that the array fills properly.
+Background should be something other than transparent or white.
+
+
+Full set of images:
+-------------------
+blog: 144x108  (4:3)
+thumb: 70x70 or 70x53
+project: 640x480
+
+Are projects the individual parts like the T&L Node, database, gauge web
+page, plot web page, etc or more general categories like
+UI/Firmware/Hardware, etc.
+
+T&L Node: Hardware (PCB image)
+T&L Node: Firmware (PCB image with chip in corner)
+
+Project page could describe specs, goals, and operation. Links to github
+and offers of sale would go on the project pages.
+
+Associate blog posts would discribe the implementation and results.
+

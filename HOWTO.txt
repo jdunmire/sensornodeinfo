@@ -1,0 +1,116 @@
+How To add documentation to this web site
+=========================================
+Notes on what needs to be done and how to do it.
+
+Local testing
+-------------
+Run jekyll in this directory. The URL for the website will be reported
+in the jekyll output.
+
+   $ jekyll server
+   or
+   $ jekyll server -w  # watch files for changes (default for some jekyll versions)
+   or
+   $ jekyll server --drafts  #to include the drafts.
+
+
+Project Component
+-------------------
+ * Post goes in _posts/components/ directory and must have the form
+      YYYY-MM-DD-<title>.md  (other markups extensions are supported).
+      * set image: to the file in assets/img/components/
+ 
+ * Choose an image and make three sizes. The first two are for use with
+   associated blog posts.
+    * 144x108 goes in assests/img/blog/
+    * 70x70 (or 70x53) goes in assets/img/blog/thumbs
+    * 640x480 goes in assets/img/components/
+
+ * (optional) Other images to document the component.
+    * large, 16:9
+    * 1280x720, jpg (90%) seems to produce reasonable size files.
+    * place in assets/img/components/carousel/
+    * file names for the  are specified in the
+      _posts/components/<component_post> file so they could be anything,
+      but using the post tile in the image name will make them easier to
+      associate with the post.
+
+ * Question: Should a permalink tag be used to organize the components?
+             If so, what form should the tag take?
+
+Blog Entries
+------------
+ * post goes in _posts/blog/ and must have the form
+   YYYY-MM-DD-<title>.md (other markups extensions are suppoted).
+ * Blog entries related to the project should reference the
+   assets/img/blog/ and assets/img/blog/thumbs/ images
+ * Organize links to blog by date using the permalink: tag.
+        /blog/YYYY/MM/DD/<title>
+ * If comments will be allowed, create an issue at github and include
+   the commentIssueId: tag. The tag value is the issue number
+ * Categories:
+
+        Hardware
+        Firmware
+        Network
+        UserInterface
+        Database
+
+
+Cute illustration ideas
+-----------------------
+  * use the node grid background
+  * use strings of binary to represent data
+  * put a jumble of binary in a woven basket to represent the database
+  * use the binary in a chip to represent firmware
+  * use a montior image full of binary to represent software
+  * use gauges and knobs to represent the UI
+
+For related projects add the vector graphic illustration to a corner of
+the image to destinguish the different, but related, projects. For
+example the PCB for T&L Node for the hardware and the PCB with the
+firmware image to cover the firmware for the T&L Node.
+
+
+Project Components Page
+-----------------------
+This is a list of the components.
+Make it more like the blog page.
+Large left area with list of components, image, title, short desc.
+Right column with Categories:
+
+TO DO
+-----
+
+  * Fill out component description for T&L Node Firmware.
+  * Check links
+  * Add component description for graphs (status could be concept)
+  * Add component description for DB (status could be concept)
+  * Add component description for protocol (MQTT) (status could be
+    concept)
+  * Add blog post announcing the T&L Node * components
+  * Push to git hub
+
+  * DONE: Privacy notice and enable tracking
+  * DONE: Fill-out component descriptions for T&L Node
+  * FIXED: Remove extra blog posts
+  * FIXED: Components tag does not work (no components section on the category pages)
+  * FIXED: Add links to repository as part of component blog post
+  * FIXED: On components page, when there is no image, move the summary to the
+    left.
+
+  * FIXED: Fix the T&L Node gallery
+  * FIXED: RockingD Labs link on About page does not work.
+  * FIXED: Add link to 'maker' on the About page: https://en.wikipedia.org/wiki/Maker_culture
+  * DONE: Change Project Components to a list with the summary info.
+     - throw out _includes/components.html  DONE
+     - model after blog.html  DONE
+     - image size needs to change  DONE
+     - Add component status legend: concept, active, obsolete  DONE
+     - Show only active on the front page, all on the project components
+       page. DONE
+  * DONE: Change component page to list related blog posts at the side, like
+    the blog summary page.
+
+
+
